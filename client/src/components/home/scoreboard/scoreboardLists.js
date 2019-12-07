@@ -53,6 +53,7 @@ class ScoreboardLists extends Component {
                   deletePlayer={id => {
                     this.deletePlayer(id);
                   }}
+                  key={player._id}
                 />
               );
             })}
