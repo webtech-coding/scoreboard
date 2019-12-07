@@ -14,8 +14,21 @@ const createPlayer = async (req, res) => {
   }
 };
 const getAllPlayers = async (req, res) => {
+  const { orderBy } = req.query;
+  let sort = [];
+  switch (orderBy) {
+    case "asc":
+      sort = ["score", 1];
+      break;
+    case "desc":
+      sort = ["score", -1];
+      break;
+    default:
+      sort = [];
+      break;
+  }
   try {
-    const players = await Player.find();
+    const players = await Player.find().sort([sort]);
     res.status(200).json({
       players
     });

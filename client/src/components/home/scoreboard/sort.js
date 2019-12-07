@@ -1,8 +1,8 @@
 import React from "react";
 
-const Sort = () => {
+const Sort = props => {
   return (
-    <div className='sort'>
+    <div className='sort' onClick={props.onOrderToggle}>
       <div></div>
       <button className='sort__button'>
         <svg className='sort__icon'>

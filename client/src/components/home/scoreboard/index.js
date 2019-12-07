@@ -1,12 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import ScoreboardLists from "./scoreboardLists";
+
 const ScoreBoard = () => {
-  return (
-    <Fragment>
-      <ScoreboardLists />
-    </Fragment>
-  );
+  return <ScoreboardLists />;
 };
 
 export default ScoreBoard;
