@@ -1,6 +1,14 @@
 # SCOREBOARD
 
-A simple system to keep score of players.
+A simple system to keep score of players build on MERN stack. The key features include adding player, individual score and delete player.
+
+Techonolgy used :
+
+- React.js
+- Node.js
+- MongoDB
+- Express
+- REST API
 
 ### List score of players
 
