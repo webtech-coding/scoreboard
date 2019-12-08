@@ -9,6 +9,7 @@ function App() {
     <Switch>
       <Route path='/' exact component={Home}></Route>
       <Route path='/add_player' exact component={Player}></Route>
+      <Route path='/player/edit/:id' exact component={Player}></Route>
     </Switch>
   );
 }

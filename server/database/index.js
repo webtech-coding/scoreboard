@@ -7,9 +7,11 @@ const Database = async () => {
       useUnifiedTopology: true,
       useFindAndModify: true
     });
-    console.log("Database connection successful");
+    if (connect) {
+      console.log("Database connection successful");
+    }
   } catch (error) {
-    console.log("Database connection error");
+    console.log(`Database connection error : ${error}`);
   }
 };
 

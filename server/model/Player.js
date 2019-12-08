@@ -13,6 +13,9 @@ const PlayerSchema = new mongoose.Schema({
     type: Number,
     required: [true, "please provide the score of the player"],
     default: 0
+  },
+  avatar: {
+    type: String
   }
 });
 

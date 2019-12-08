@@ -1,9 +1,15 @@
 const Player = require("./../model/Player");
+const randomUser = require("random-user");
 
 const createPlayer = async (req, res) => {
   const { name, age, score } = req.body;
+  let avatar = "";
   try {
-    const player = await Player.create({ name, age, score });
+    await randomUser().then(data => {
+      avatar = data.picture.large;
+    });
+
+    const player = await Player.create({ name, age, score, avatar });
 
     res.status(201).json({
       msg: "successful",
@@ -13,6 +19,7 @@ const createPlayer = async (req, res) => {
     res.status(500).json({ msg: error });
   }
 };
+
 const getAllPlayers = async (req, res) => {
   const { orderBy } = req.query;
   let sort = [];
@@ -50,4 +57,18 @@ const removePlayer = async (req, res) => {
   }
 };
 
-module.exports = { createPlayer, getAllPlayers, removePlayer };
+const editPlayer = async (req, res) => {
+  const { id } = req.params;
+  const { name, age, score } = req.body;
+
+  try {
+    await Player.findOneAndUpdate({ id }, { name, age, score });
+    res.status(200).json({
+      success: true
+    });
+  } catch (error) {
+    res.status(500).json({ success: false });
+  }
+};
+
+module.exports = { createPlayer, getAllPlayers, removePlayer, editPlayer };

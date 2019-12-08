@@ -4,6 +4,7 @@ import axios from "axios";
 class AddNew extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       input: {
         name: "",
