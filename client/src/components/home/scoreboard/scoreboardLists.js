@@ -88,6 +88,12 @@ class ScoreboardLists extends Component {
             {this.state.loaded == false && (
               <div style={{ color: "#fff" }}>Loading ... </div>
             )}
+
+            {this.state.loaded == true && this.state.players.length == 0 && (
+              <div style={{ color: "#fff" }}>
+                No any players in the database found.
+              </div>
+            )}
           </div>
         </section>
       </Fragment>
