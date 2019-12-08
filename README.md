@@ -12,3 +12,4 @@ A simple system to keep score of players.
 
 ### Delete player
 
+### Order Players according to score
